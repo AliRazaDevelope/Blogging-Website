@@ -16,13 +16,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Set the Node.js version to use
+        node-version: '18'  # Set the Node.js version to 18 (or higher)
 
     - name: Install dependencies
       run: npm install  # Install project dependencies
 
     - name: Build the static website
-      run: npx parcel build src/index.html --dist-dir dist  # Use Parcel to build the website
+      run: npx parcel build src/index.html --dist-dir dist  # Run the build with the correct path
 
     - name: Upload build artifact
       uses: actions/upload-pages-artifact@v3
